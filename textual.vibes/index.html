@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Textual Vibes | Line Art</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="light-mode">
+
+  <!-- صفحه ورودی با شعر فارسی -->
+  <div id="splash-screen">
+    <div class="puzzle-frame">
+      <p class="poem">
+        «هر رنگ، صدای دل است<br>
+        هر خط، زمزمه‌ی روح<br>
+        نقاشی، زبان بی‌کلام احساس‌هاست»
+      </p>
+    </div>
+  </div>
+
+  <!-- دکمه‌های زبان و حالت نمایش -->
+  <div class="controls" style="display:none;" id="controls">
+    <div class="language-switch">
+      <button onclick="switchLanguage('fa')">فارسی</button>
+      <button onclick="switchLanguage('en')">English</button>
+    </div>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">🌓 Mode</button>
+    </div>
+  </div>
+
+  <!-- محتوای اصلی سایت -->
+  <div id="main-content" style="display:none;">
+    <header>
+      <div class="logo fa" style="display:none;">تکستوال وایبز</div>
+      <div class="logo en">Textual Vibes</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="fa" style="display:none;">خانه</a><a href="#home" class="en">Home</a></li>
+          <li><a href="#about" class="fa" style="display:none;">درباره من</a><a href="#about" class="en">About</a></li>
+          <li><a href="#gallery" class="fa" style="display:none;">گالری</a><a href="#gallery" class="en">Gallery</a></li>
+          <li><a href="#order" class="fa" style="display:none;">سفارش</a><a href="#order" class="en">Order</a></li>
+          <li><a href="#contact" class="fa" style="display:none;">تماس</a><a href="#contact" class="en">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <h1 class="fa" style="display:none;">هر خط، یک احساس است</h1>
+      <h1 class="en">Every line is a feeling</h1>
+      <p class="fa" style="display:none;">نقاشی و طراحی گرافیک با سبک Line Art</p>
+      <p class="en">Painting and graphic design in Line Art style</p>
+      <a href="#gallery" class="btn fa" style="display:none;">مشاهده آثار</a>
+      <a href="#gallery" class="btn en">View Gallery</a>
+    </section>
+
+    <section id="about">
+      <h2 class="fa" style="display:none;">درباره من</h2>
+      <h2 class="en">About Me</h2>
+      <p class="fa" style="display:none;">هنرمند گرافیک و نقاشی با تمرکز بر سبک خطی، تایپوگرافی مفهومی و vibes بصری.</p>
+      <p class="en">Graphic artist focused on line art, conceptual typography, and visual vibes.</p>
+    </section>
+
+    <section id="gallery">
+      <h2 class="fa" style="display:none;">گالری آثار</h2>
+      <h2 class="en">Art Gallery</h2>
+      <div class="gallery">
+        <img src="images/art1.jpg" alt="Artwork 1">
+        <img src="images/art2.jpg" alt="Artwork 2">
+        <img src="images/art3.jpg" alt="Artwork 3">
+      </div>
+    </section>
+
+    <section id="order">
+      <h2 class="fa" style="display:none;">سفارش آنلاین</h2>
+      <h2 class="en">Online Order</h2>
+      <form id="orderForm">
+        <input type="text" id="yourname" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <select id="type" required>
+          <option value="">Select Type</option>
+          <option value="Line Art">Line Art</option>
+          <option value="Typography">Typography</option>
+          <option value="Graphic Design">Graphic Design</option>
+        </select>
+        <textarea id="details" placeholder="Order Details" required></textarea>
+        <button type="submit">Submit Order</button>
+      </form>
+    </section>
+
+    <section id="contact">
+      <h2 class="fa" style="display:none;">تماس با من</h2>
+      <h2 class="en">Contact Me</h2>
+      <p class="fa" style="display:none;">برای ارتباط بیشتر، به پیج <a href="https://instagram.com/textual.vibes" target="_blank">textual.vibes</a> در اینستاگرام سر بزنید.</p>
+      <p class="en">For more, visit <a href="https://instagram.com/textual.vibes" target="_blank">textual.vibes</a> on Instagram.</p>
+    </section>
+
+    <footer>
+      <p class="fa" style="display:none;">© 2025 Textual Vibes | طراحی با عشق و خط</p>
+      <p class="en">© 2025 Textual Vibes | Designed with love and lines</p>
+    </footer>
+  </div>
+
+</body>
+</html>
