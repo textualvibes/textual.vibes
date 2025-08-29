@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Textual Vibes | Line Art</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body class="light-mode">
+  <title>تکستوال وایبز</title>
 
-  <!-- صفحه ورودی با شعر فارسی -->
+  <!-- فونت‌های خاص -->
+  <link rel="stylesheet" href="fonts/fontiran.css">
+
+  <!-- استایل اصلی -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- صفحه‌ی ورودی با شعر -->
   <div id="splash-screen">
-    <div class="puzzle-frame">
+    <div class="poem-box">
       <p class="poem">
         «هر رنگ، صدای دل است<br>
         هر خط، زمزمه‌ی روح<br>
@@ -20,88 +24,67 @@
     </div>
   </div>
 
-  <!-- دکمه‌های زبان و حالت نمایش -->
-  <div class="controls" style="display:none;" id="controls">
-    <div class="language-switch">
-      <button onclick="switchLanguage('fa')">فارسی</button>
-      <button onclick="switchLanguage('en')">English</button>
-    </div>
-    <div class="theme-toggle">
-      <button onclick="toggleTheme()">🌓 Mode</button>
-    </div>
-  </div>
-
-  <!-- محتوای اصلی سایت -->
+  <!-- محتوای اصلی -->
   <div id="main-content" style="display:none;">
     <header>
-      <div class="logo fa" style="display:none;">تکستوال وایبز</div>
-      <div class="logo en">Textual Vibes</div>
+      <div class="logo">تکستوال وایبز</div>
       <nav>
         <ul class="nav-links">
-          <li><a href="#home" class="fa" style="display:none;">خانه</a><a href="#home" class="en">Home</a></li>
-          <li><a href="#about" class="fa" style="display:none;">درباره من</a><a href="#about" class="en">About</a></li>
-          <li><a href="#gallery" class="fa" style="display:none;">گالری</a><a href="#gallery" class="en">Gallery</a></li>
-          <li><a href="#order" class="fa" style="display:none;">سفارش</a><a href="#order" class="en">Order</a></li>
-          <li><a href="#contact" class="fa" style="display:none;">تماس</a><a href="#contact" class="en">Contact</a></li>
+          <li><a href="#home">خانه</a></li>
+          <li><a href="#about">درباره من</a></li>
+          <li><a href="gallery.html">گالری</a></li>
+          <li><a href="#order">سفارش</a></li>
+          <li><a href="#contact">تماس</a></li>
         </ul>
       </nav>
     </header>
 
     <section id="home" class="hero">
-      <h1 class="fa" style="display:none;">هر خط، یک احساس است</h1>
-      <h1 class="en">Every line is a feeling</h1>
-      <p class="fa" style="display:none;">نقاشی و طراحی گرافیک با سبک Line Art</p>
-      <p class="en">Painting and graphic design in Line Art style</p>
-      <a href="#gallery" class="btn fa" style="display:none;">مشاهده آثار</a>
-      <a href="#gallery" class="btn en">View Gallery</a>
+      <h1>هر خط، یک احساس است</h1>
+      <p>طراحی گرافیک و نقاشی با سبک Line Art و vibes بصری</p>
+      <a href="gallery.html" class="btn">مشاهده آثار</a>
     </section>
 
     <section id="about">
-      <h2 class="fa" style="display:none;">درباره من</h2>
-      <h2 class="en">About Me</h2>
-      <p class="fa" style="display:none;">هنرمند گرافیک و نقاشی با تمرکز بر سبک خطی، تایپوگرافی مفهومی و vibes بصری.</p>
-      <p class="en">Graphic artist focused on line art, conceptual typography, and visual vibes.</p>
-    </section>
-
-    <section id="gallery">
-      <h2 class="fa" style="display:none;">گالری آثار</h2>
-      <h2 class="en">Art Gallery</h2>
-      <div class="gallery">
-        <img src="images/art1.jpg" alt="Artwork 1">
-        <img src="images/art2.jpg" alt="Artwork 2">
-        <img src="images/art3.jpg" alt="Artwork 3">
-      </div>
+      <h2>درباره من</h2>
+      <p>هنرمند گرافیک با تمرکز بر طراحی خطی، تایپوگرافی مفهومی و خلق vibes بصری خاص.</p>
     </section>
 
     <section id="order">
-      <h2 class="fa" style="display:none;">سفارش آنلاین</h2>
-      <h2 class="en">Online Order</h2>
+      <h2>سفارش آنلاین</h2>
       <form id="orderForm">
-        <input type="text" id="yourname" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <select id="type" required>
-          <option value="">Select Type</option>
-          <option value="Line Art">Line Art</option>
-          <option value="Typography">Typography</option>
-          <option value="Graphic Design">Graphic Design</option>
+        <input type="text" placeholder="نام شما" required>
+        <input type="email" placeholder="ایمیل" required>
+        <select required>
+          <option value="">نوع اثر</option>
+          <option value="لاین‌آرت">لاین‌آرت</option>
+          <option value="لوگو">لوگو</option>
+          <option value="پوستر">پوستر</option>
         </select>
-        <textarea id="details" placeholder="Order Details" required></textarea>
-        <button type="submit">Submit Order</button>
+        <textarea placeholder="توضیحات سفارش" required></textarea>
+        <button type="submit">ارسال سفارش</button>
       </form>
     </section>
 
     <section id="contact">
-      <h2 class="fa" style="display:none;">تماس با من</h2>
-      <h2 class="en">Contact Me</h2>
-      <p class="fa" style="display:none;">برای ارتباط بیشتر، به پیج <a href="https://instagram.com/textual.vibes" target="_blank">textual.vibes</a> در اینستاگرام سر بزنید.</p>
-      <p class="en">For more, visit <a href="https://instagram.com/textual.vibes" target="_blank">textual.vibes</a> on Instagram.</p>
+      <h2>تماس با من</h2>
+      <p>برای ارتباط بیشتر، به پیج <a href="https://instagram.com/textual.vibes" target="_blank">textual.vibes</a> در اینستاگرام سر بزنید.</p>
     </section>
 
     <footer>
-      <p class="fa" style="display:none;">© 2025 Textual Vibes | طراحی با عشق و خط</p>
-      <p class="en">© 2025 Textual Vibes | Designed with love and lines</p>
+      <p>© ۲۰۲۵ تکستوال وایبز | طراحی با عشق و خط</p>
     </footer>
   </div>
+
+  <!-- اسکریپت برای نمایش صفحه اصلی بعد از ورود -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('splash-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 3000); // نمایش شعر به مدت ۳ ثانیه
+    });
+  </script>
 
 </body>
 </html>
