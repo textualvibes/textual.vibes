@@ -1,64 +1,125 @@
-// نمایش محتوای اصلی بعد از صفحه شعر
-window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("splash-screen").style.display = "none";
-    document.getElementById("main-content").style.display = "block";
-    document.getElementById("controls").style.display = "flex";
-    switchLanguage("en"); // زبان پیش‌فرض انگلیسی
-  }, 3000); // نمایش شعر به مدت ۳ ثانیه
-});
-
-// سوییچ زبان بین فارسی و انگلیسی
-function switchLanguage(lang) {
-  const faElements = document.querySelectorAll(".fa");
-  const enElements = document.querySelectorAll(".en");
-
-  if (lang === "fa") {
-    faElements.forEach(el => el.style.display = "");
-    enElements.forEach(el => el.style.display = "none");
-    document.body.setAttribute("dir", "rtl");
-  } else {
-    faElements.forEach(el => el.style.display = "none");
-    enElements.forEach(el => el.style.display = "");
-    document.body.setAttribute("dir", "ltr");
-  }
+/* تنظیمات پایه */
+body {
+  direction: rtl;
+  font-family: 'Vazir', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
 }
 
-// تغییر حالت روشن/تاریک
-function toggleTheme() {
-  const body = document.body;
-  if (body.classList.contains("dark-mode")) {
-    body.classList.remove("dark-mode");
-    body.classList.add("light-mode");
-  } else {
-    body.classList.remove("light-mode");
-    body.classList.add("dark-mode");
-  }
+/* تیترها با فونت خاص و رنگ آبی پروسی */
+h1, h2, h3 {
+  font-family: 'IranSans', sans-serif;
+  color: #0074D9; /* آبی پروسی */
+  margin-bottom: 1rem;
 }
 
-// ارسال سفارش به دایرکت اینستاگرام
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("orderForm");
-  if (!form) return;
+/* هدر و منو */
+header {
+  background-color: #ffffff;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0074D9;
+}
 
-    const name = document.getElementById("yourname").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const type = document.getElementById("type").value.trim();
-    const details = document.getElementById("details").value.trim();
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
 
-    const message = `سلام 👋\nیه سفارش جدید دارم:\n\n🧑‍💼 نام: ${name}\n📧 ایمیل: ${email}\n🎨 نوع اثر: ${type}\n📝 جزئیات: ${details}\n\nممنون میشم بررسی کنید 🙏`;
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-    alert("لطفا در پیج textual.vibes ثبت سفارش کنید.");
+.nav-links li a:hover {
+  color: #0074D9;
+}
 
-    window.open("https://www.instagram.com/textual.vibes/", "_blank");
+/* بخش ورودی با شعر */
+#splash-screen {
+  background-color: #f0f8ff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    navigator.clipboard.writeText(message).then(() => {
-      console.log("پیام کپی شد!");
-    }).catch(err => {
-      console.error("مشکل در کپی پیام:", err);
-    });
-  });
-});
+.poem-box {
+  text-align: center;
+  font-family: 'Shabnam', cursive;
+  font-size: 1.4rem;
+  color: #444;
+}
+
+/* بخش اصلی */
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* دکمه‌ها */
+.btn {
+  display: inline-block;
+  background-color: #0074D9;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #005fa3;
+}
+
+/* فرم سفارش */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, select, textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'Vazir', sans-serif;
+}
+
+button[type="submit"] {
+  background-color: #0074D9;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+/* فوتر */
+footer {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
